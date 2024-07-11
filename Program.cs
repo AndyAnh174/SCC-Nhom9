@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+
+namespace Maytinh;
+
+class Program {
+    static void Main(){
+        Console.WriteLine("Hello"); //Cout<<“”;
+          /* Console.ReadLine(); cin<<value;  */
+    }
+}
