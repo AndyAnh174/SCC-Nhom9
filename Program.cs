@@ -1,9 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
 using System;
 class Operator{    
-    char operation = operationInput[0];
-    Calculator calculator = new Calculator (num1, num2);
-    double result = 0;
+
     switch (operation){
         case '+':
             result = calculator.Add();
@@ -32,3 +29,41 @@ class Operator{
     Console.WriteLine($"Kết quả: {num1} {operation} {num2} = {result});
 
 }
+    char operation = operationInput[0];
+    Calculator calculator = new Calculator (num1, num2);
+    double result = 0;
+
+class Calculator
+{
+
+    private double num1;
+    private double num2;
+
+    public Calculator(double num1, double num2)
+    {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    public double Add()
+    {
+        return num1 + num2;
+    }
+
+    public double Subtract()
+    {
+        return num1 - num2;
+    }
+
+    public double Multiply()
+    {
+        return (num1 * num2);
+    }
+
+    public double Divide()
+    {
+        if (num2 == 0)
+        {
+            throw new DivideByZeroException("Lỗi: Không thể chia cho 0");
+        }
+        return num1 / num2;
