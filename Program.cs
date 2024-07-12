@@ -45,3 +45,5 @@ class Calculator
             throw new DivideByZeroException("Lỗi: Không thể chia cho 0");
         }
         return num1 / num2;
+    }
+}
