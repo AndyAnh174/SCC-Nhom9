@@ -1,5 +1,26 @@
-using System;
-class Operator{    
+﻿using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Nhập số thứ nhất: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Nhập số thứ hai: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Chọn phép toán (+, -, *, /): ");
+        string operationInput = Console.ReadLine();
+        if (string.IsNullOrEmpty(operationInput))
+        {
+            Console.WriteLine("Phép toán không hợp lệ.");
+            return;
+        }
+    
+        char operation = operationInput[0];
+    Calculator calculator = new Calculator (num1, num2);
+    double result = 0;
 
     switch (operation){
         case '+':
@@ -26,12 +47,10 @@ class Operator{
             Console.WriteLine("Phép toán không hợp lệ.");
             return;
     }
-    Console.WriteLine($"Kết quả: {num1} {operation} {num2} = {result});
+    Console.WriteLine($"Kết quả: {num1} {operation} {num2} = {result}");
 
 }
-    char operation = operationInput[0];
-    Calculator calculator = new Calculator (num1, num2);
-    double result = 0;
+}
 
 class Calculator
 {
@@ -67,3 +86,5 @@ class Calculator
             throw new DivideByZeroException("Lỗi: Không thể chia cho 0");
         }
         return num1 / num2;
+    }
+}
